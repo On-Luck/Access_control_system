@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0302CC5A-7E9F-47D3-91E5-C558F83221CD}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AccessControlSystem</RootNamespace>
+    <AssemblyName>AccessControlSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accessControlSystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>accessControlSystemDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ArduinoClasses\ArduinoRW.cs" />
+    <Compile Include="FormAnchoredKeys.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnchoredKeys.Designer.cs">
+      <DependentUpon>FormAnchoredKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAnchoredKeysAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnchoredKeysAddEdit.Designer.cs">
+      <DependentUpon>FormAnchoredKeysAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormJournal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormJournal.Designer.cs">
+      <DependentUpon>FormJournal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKeyUserRegulationRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKeyUserRegulationRoom.Designer.cs">
+      <DependentUpon>FormKeyUserRegulationRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportJournalDateRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportJournalDateRoom.Designer.cs">
+      <DependentUpon>FormReportJournalDateRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keys\FormKeyUserBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keys\FormKeyUserBook.Designer.cs">
+      <DependentUpon>FormKeyUserBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operation\FormRegulationRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operation\FormRegulationRoom.Designer.cs">
+      <DependentUpon>FormRegulationRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regulation\FormRegulationBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regulation\FormRegulationBook.Designer.cs">
+      <DependentUpon>FormRegulationBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Regulation\FormRegulationsAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Regulation\FormRegulationsAddEdit.Designer.cs">
+      <DependentUpon>FormRegulationsAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms\FormRoomAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rooms\FormRoomAddEdit.Designer.cs">
+      <DependentUpon>FormRoomAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rooms\FormRoomsBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rooms\FormRoomsBook.Designer.cs">
+      <DependentUpon>FormRoomsBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keys\FormKeyStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keys\FormKeyStatus.Designer.cs">
+      <DependentUpon>FormKeyStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keys\FormKeyType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keys\FormKeyType.Designer.cs">
+      <DependentUpon>FormKeyType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keys\FormKeysAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keys\FormKeysAddEdit.Designer.cs">
+      <DependentUpon>FormKeysAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Keys\FormKeysBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Keys\FormKeysBook.Designer.cs">
+      <DependentUpon>FormKeysBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor\FormVisitorAddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visitor\FormVisitorAddEdit.Designer.cs">
+      <DependentUpon>FormVisitorAddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Visitor\FormVisitorBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Visitor\FormVisitorBook.Designer.cs">
+      <DependentUpon>FormVisitorBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormPosition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormPosition.Designer.cs">
+      <DependentUpon>FormPosition.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormDepartment.Designer.cs">
+      <DependentUpon>FormDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormWorkerBook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormWorkerBook.Designer.cs">
+      <DependentUpon>FormWorkerBook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Worker\FormWorker_AddEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Worker\FormWorker_AddEdit.Designer.cs">
+      <DependentUpon>FormWorker_AddEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\FormAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\FormAdmin.Designer.cs">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForms\FormSecurity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForms\FormSecurity.Designer.cs">
+      <DependentUpon>FormSecurity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAnchoredKeys.resx">
+      <DependentUpon>FormAnchoredKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAnchoredKeysAddEdit.resx">
+      <DependentUpon>FormAnchoredKeysAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormJournal.resx">
+      <DependentUpon>FormJournal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKeyUserRegulationRoom.resx">
+      <DependentUpon>FormKeyUserRegulationRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportJournalDateRoom.resx">
+      <DependentUpon>FormReportJournalDateRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keys\FormKeyUserBook.resx">
+      <DependentUpon>FormKeyUserBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\FormSecurity.resx">
+      <DependentUpon>FormSecurity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operation\FormRegulationRoom.resx">
+      <DependentUpon>FormRegulationRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regulation\FormRegulationBook.resx">
+      <DependentUpon>FormRegulationBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Regulation\FormRegulationsAddEdit.resx">
+      <DependentUpon>FormRegulationsAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportJournalDateRoom.rdlc">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms\FormRoomAddEdit.resx">
+      <DependentUpon>FormRoomAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rooms\FormRoomsBook.resx">
+      <DependentUpon>FormRoomsBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keys\FormKeyStatus.resx">
+      <DependentUpon>FormKeyStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keys\FormKeyType.resx">
+      <DependentUpon>FormKeyType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keys\FormKeysAddEdit.resx">
+      <DependentUpon>FormKeysAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Keys\FormKeysBook.resx">
+      <DependentUpon>FormKeysBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visitor\FormVisitorAddEdit.resx">
+      <DependentUpon>FormVisitorAddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Visitor\FormVisitorBook.resx">
+      <DependentUpon>FormVisitorBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormPosition.resx">
+      <DependentUpon>FormPosition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormDepartment.resx">
+      <DependentUpon>FormDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormWorkerBook.resx">
+      <DependentUpon>FormWorkerBook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Worker\FormWorker_AddEdit.resx">
+      <DependentUpon>FormWorker_AddEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\FormAdmin.resx">
+      <DependentUpon>FormAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForms\FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="accessControlSystemDataSet.xsc">
+      <DependentUpon>accessControlSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="accessControlSystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>accessControlSystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="accessControlSystemDataSet.xss">
+      <DependentUpon>accessControlSystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\186389-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-trash-416.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_ic_delete_48px_352303.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_image_cancel_103591.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_new-24_103173.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_plus-24_103172.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_plus-24_1031722.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\308956-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\308957-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_next_308956.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_previous_308957.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_skip-next_326513.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\326513-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_skip-next_3265131.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\326513-512 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\326513-512 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_save_1608823.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_refresh27_216529.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\if_rules_3018564.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 с пакетом обновления 1 %28SP1%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
